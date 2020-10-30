@@ -1,0 +1,1 @@
+create table elect_bill (RR_number varchar(10), consumer_name varchar(25), bill_date date, units_consumed number(4));
