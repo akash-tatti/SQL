@@ -1,1 +1,14 @@
-create table elect_bill (RR_number varchar(10), consumer_name varchar(25), bill_date date, units_consumed number(4));
+create table ebill (rrno varchar (3), name varchar (10), billdate date , units int (4));
+insert into ebill values ('e201','prakash','01-11-2014',96);
+insert into ebill values ('e202','ramesh','02-11-2014',45);
+insert into ebill values ('e201','dhanush','07-12-2014',86);
+describe ebill;
+alter table ebill add (billamt int (6) , duedate date);
+describe ebill;
+update ebill set billamt= 50;
+update ebill set billamt= billamt + units * 4.50 where units <= 100;
+update ebill set billamt= billamt + 100 * 4.50 +(units-100)*5.50 where units>100;
+select rrnumber, units, billamt from ebill;
+update ebill set duedate = billdate+15;
+select rrnumber , billdate,duedate from ebill;
+select*from ebill;
